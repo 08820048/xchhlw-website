@@ -24,12 +24,6 @@ git clone https://github.com/yourusername/xchhlw-website.git
 cd xchhlw-website
 ```
 
-## 部署
-
-此项目已配置为可以直接部署到Vercel平台。
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fxchhlw-website)
-
 ## 目录结构
 
 ```
