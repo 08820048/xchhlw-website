@@ -1,0 +1,21 @@
+{
+  "name": "xchhlw-website",
+  "version": "1.0.0",
+  "description": "小弛互联网科技公司官方网站",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve .",
+    "build": "cp -r index.html public/"
+  },
+  "keywords": [
+    "company",
+    "website",
+    "static",
+    "responsive"
+  ],
+  "author": "小弛互联网科技",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

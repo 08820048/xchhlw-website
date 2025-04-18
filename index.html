@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小弛互联网科技</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 宋体, 楷体;
+        }
+
+        body {
+
+            padding-top: 130px;
+            line-height: 1.6;
+            background: url('images/background2.png') center center/cover;
+            min-height: 400px;
+
+        }
+
+        /* 头部样式 */
+        .header {
+            background: #2c5f2d;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 5px solid #97bc62;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background: #97bc62;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 74px;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 2rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            background: #2c5f2d;
+            transform: scale(1.1);
+        }
+
+        /* 主要内容区样式 */
+        section {
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            max-width: 900px;
+        }
+
+        /* 标题样式 */
+        h2 {
+            color: #2c5f2d;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #97bc62;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #2c5f2d;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .bg-company {
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)),
+                url('images/background1.png') center center/cover fixed;
+        }
+
+        .bg-company,
+        .bg-products {
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 20px auto;
+        }
+
+        /* 小屏幕适配 */
+        @media (max-width: 768px) {
+
+            .bg-company,
+            .bg-products {
+                background-attachment: scroll;
+                /* 移动端取消固定背景 */
+                min-height: auto;
+            }
+        }
+
+        /* 营业执照展示样式 */
+        .license {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        #license .license {
+            background:
+                linear-gradient(rgba(255, 255, 255, 1.95), rgba(255, 255, 255, -1.05)),
+                url('images/message.png') center center/cover fixed;
+            min-height: 600px;
+            /* 保持背景图展示空间 */
+            border: none;
+            /* 移除原有边框 */
+            padding: 50px;
+            /* 增加内容边距 */
+        }
+
+        /* 联系方式样式 */
+        .contact-box {
+            background: #f4f4f4;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        /* 邮箱样式 */
+        .email-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .email-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 450px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .email-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .email-icon {
+            font-size: 22px;
+            margin-right: 12px;
+        }
+
+        .email-label {
+            font-weight: bold;
+            color: #2c5f2d;
+            margin-right: 8px;
+        }
+
+        .email-link {
+            color: #97bc62;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .email-link:hover {
+            color: #2c5f2d;
+            text-decoration: underline;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background: #2c5f2d;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        html {
+            scroll-padding-top: 8rem;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>小弛互联网科技</h1>
+    </div>
+
+    <nav>
+        <a href="#about">关于我们</a>
+        <a href="#license">招聘信息</a>
+        <a href="#contact">联系我们</a>
+    </nav>
+
+    <section id="about" class="bg-company">
+        <h2>关于我们</h2>
+        <h3>公司背景</h3>
+        <p>小弛互联网科技公司于 2024
+            年正式成立，专注于推动国际小商品进出口贸易。在跨境电商蓬勃发展、中国制造业繁荣的大背景下，我们精准把握进出口贸易机遇，积累了丰富的国内销售与国际市场拓展经验。自成立以来，公司始终坚守“质量第一，客户至上”的核心价值观，实现了快速发展与壮大。
+        </p>
+        <p>目前，我们已在抖音、快手、Youtube
+            等多个短视频平台，以及淘宝、京东、亚马逊等电商平台开设官方店铺，并积极开展线上直播销售业务。我们不断创新和完善产品线，致力于为全球客户提供高品质、极具竞争力的商品。为更好地满足全球市场需求，我们高度重视产品的研发与设计，持续提升产品的市场适应性。
+        </p>
+        <p>我们与欧美、亚洲等多个国家的客户建立了长期稳定的合作关系，通过精准的市场定位和高效的物流系统，确保每一件商品都能及时、安全地送达客户手中。公司产品广泛涵盖家居用品、个人护理用品、办公文具、智能电子产品等多个领域。依托强大的供应链管理能力，我们保障了产品质量和供应的稳定性。
+        </p>
+
+        <h3>主营商品</h3>
+        <div class="bg-products">
+            <p>小弛互联网科技公司的主营商品丰富多样，主要涵盖以下品类：</p>
+            <ul>
+                <li>家居用品：包括装饰品、床上用品、厨房用品等。</li>
+                <li>个人护理产品：包括美妆工具、健康护理设备等。</li>
+                <li>办公文具：包括高端文具、办公设备配件等。</li>
+                <li>智能电子产品：包括蓝牙耳机、智能手表、便携式音响等。</li>
+            </ul>
+            <p>我们对每一类商品都实施严格的质量管控，从设计到生产的每一个环节都精益求精，确保产品能够满足不同市场的需求和消费标准。我们为各大零售商、线上商店以及个人消费者提供优质产品，建立了广泛的销售网络。</p>
+        </div>
+    </section>
+
+    <!-- 招聘信息 -->
+    <section id="license">
+        <h2>招聘信息</h2>
+        <div class="license">
+            <p>随着公司业务的飞速发展和跨境电商业务的不断拓展，我们诚邀英语水平出众、尤其是口语能力优秀的人才加入我们的团队。我们急需优秀的客服人员，他们应具备良好的沟通能力和应变能力，能够高效应对来自欧美各国客户的咨询，并提供优质的售后服务。
+            </p>
+            <h3>招聘岗位：客服专员</h3>
+            <ul>
+                <li>通过邮件、电话、在线聊天工具等方式与客户沟通，解答客户疑问。</li>
+                <li>为客户提供产品咨询、订单跟踪、售后服务等支持。</li>
+                <li>管理和维护客户关系，确保客户满意度。</li>
+                <li>处理客户的投诉、建议，并协调解决问题。</li>
+            </ul>
+            <h3>岗位职责</h3>
+            <ul>
+                <li>英语听说读写流利，口语能力尤为突出，能够熟练应对日常英语交流和商务沟通。</li>
+                <li>雅思 7.0 及以上，具备出色的跨文化沟通能力。</li>
+                <li>拥有良好的团队合作精神和独立解决问题的能力。</li>
+                <li>熟悉电商平台及客服系统，有相关经验者优先考虑。</li>
+            </ul>
+            <h3>福利待遇</h3>
+            <ul>
+                <li>优厚的薪资待遇和年度奖金。</li>
+                <li>完善的职业培训和广阔的晋升机会。</li>
+                <li>弹性工作时间和远程工作机会。</li>
+                <li>社会保险及其他福利待遇。</li>
+            </ul>
+            <p>如果您符合以上要求，并渴望加入一个快速发展的国际化团队，请将您的简历发送至我们的人力资源邮箱：[hr@xchhlw.com]。我们热忱欢迎每一位热爱电商、具备跨文化沟通能力的应聘者加入我们的大家庭。
+            </p>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact">
+        <h2>联系我们</h2>
+        <div class="contact-box">
+            <div class="contact-item">
+                📞 联系电话：+86 - 18725962464（工作日 9:00 - 18:00）
+            </div>
+            <div class="contact-item email-container">
+                <div class="email-item">
+                    <i class="email-icon">👥</i>
+                    <span class="email-label">人力资源：</span>
+                    <a href="mailto:hr@xchhlw.com" class="email-link">hr@xchhlw.com</a>
+                </div>
+                <div class="email-item">
+                    <i class="email-icon">💼</i>
+                    <span class="email-label">商务合作：</span>
+                    <a href="mailto:account@xchhlw.com" class="email-link">account@xchhlw.com</a>
+                </div>
+                <div class="email-item">
+                    <i class="email-icon">🔧</i>
+                    <span class="email-label">技术支持：</span>
+                    <a href="mailto:tech@xchhlw.com" class="email-link">tech@xchhlw.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 小弛互联网科技 版权所有</p>
+    </footer>
+</body>
+
+</html>
